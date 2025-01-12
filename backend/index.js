@@ -18,7 +18,16 @@ const CLOUD_API_SECRET = process.env.CLOUD_API_SECRET;
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://cv-builder-pi-liart.vercel.app/",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
+
 app.use(express.json());
 app.use(
   fileUpload({
@@ -36,7 +45,7 @@ app.use("/auth/", authRoute);
 app.use("/user/", authenticateUser, userDataRoute);
 
 connectMongodb(DB_URL);
-connectCloudinary();
+connectCloudinary(CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET);
 
 // Start the server
 app.listen(port, () => {
