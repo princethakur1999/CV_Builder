@@ -1,0 +1,35 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# React build files
+build/
+dist/
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE or text editor files
+.idea/
+.vscode/
+
+# Optional directories for npm/yarn packages
+jspm_packages/
+
+# Coverage reports from testing
+coverage/
+
+# Miscellaneous
+*.tgz
