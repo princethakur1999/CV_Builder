@@ -35,7 +35,7 @@ function MySkills() {
       dispatch(showLoader(true));
 
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/save-skills`,
+        `${import.meta.env.VITE_API_URL}/user/save-skills`,
         skills,
         {
           headers: {

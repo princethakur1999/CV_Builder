@@ -46,7 +46,7 @@ function EducationDetails() {
         return;
       }
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/save-education-details`,
+        `${import.meta.env.VITE_API_URL}/user/save-education-details`,
         education,
         {
           headers: {

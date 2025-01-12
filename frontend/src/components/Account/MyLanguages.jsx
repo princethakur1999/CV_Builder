@@ -32,7 +32,7 @@ function MyLanguages() {
       dispatch(showLoader(true));
 
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/save-languages`,
+        `${import.meta.env.VITE_API_URL}/user/save-languages`,
         languages,
         {
           headers: {

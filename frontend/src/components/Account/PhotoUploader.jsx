@@ -23,7 +23,7 @@ function PhotoUploader() {
       formData.append("photo", photo);
 
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/save-photo`,
+        `${import.meta.env.VITE_API_URL}/user/save-photo`,
         formData,
         {
           headers: {

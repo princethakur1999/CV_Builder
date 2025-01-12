@@ -42,7 +42,7 @@ function PersonalDetails() {
     try {
       dispatch(showLoader(true));
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/save-personal-details`,
+        `${import.meta.env.VITE_API_URL}/user/save-personal-details`,
         userData,
         {
           headers: {

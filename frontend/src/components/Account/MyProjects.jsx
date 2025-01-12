@@ -34,7 +34,7 @@ function MyProjects() {
       dispatch(showLoader(true));
 
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/save-projects`,
+        `${import.meta.env.VITE_API_URL}/user/save-projects`,
         projects,
         {
           headers: {

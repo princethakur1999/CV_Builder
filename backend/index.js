@@ -32,8 +32,8 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/", authRoute);
-app.use("/", authenticateUser, userDataRoute);
+app.use("/auth", authRoute);
+app.use("/user", authenticateUser, userDataRoute);
 
 connectMongodb(DB_URL);
 connectCloudinary();

@@ -53,7 +53,7 @@ function Signup() {
 
       setLoading(true);
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/generate-otp`,
+        `${import.meta.env.VITE_API_URL}/auth/generate-otp`,
         { email: signupDetails.email }
       );
       setLoading(false);
@@ -97,7 +97,7 @@ function Signup() {
 
       setLoading(true);
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/signup`,
+        `${import.meta.env.VITE_API_URL}/auth/signup`,
         signupDetails
       );
       setLoading(false);

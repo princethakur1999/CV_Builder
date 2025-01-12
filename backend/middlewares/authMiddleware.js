@@ -6,7 +6,7 @@ export async function authenticateUser(req, res, next) {
 
     if (!token) {
       return res.status(400).json({
-        message: "Token not provided",
+        message: "Token not provided!",
       });
     }
 
