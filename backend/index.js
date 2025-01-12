@@ -37,12 +37,14 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+app.get("/test", (req, res) => {
+  res.json({
+    message: "Server is running",
+  });
 });
 
-app.use("/auth/", authRoute);
-app.use("/user/", authenticateUser, userDataRoute);
+app.use("/auth", authRoute);
+app.use("/user", authenticateUser, userDataRoute);
 
 connectMongodb(DB_URL);
 connectCloudinary(CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET);
