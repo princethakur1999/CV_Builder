@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "concurrently --name \"frontend,backend\" \"npm --prefix frontend start\" \"npm --prefix backend start\" -c \"bgRed,bgBlue\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
