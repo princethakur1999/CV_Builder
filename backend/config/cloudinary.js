@@ -1,11 +1,11 @@
 import cloudinary from "cloudinary";
 
-export function connectCloudinary() {
+export function connectCloudinary(CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET) {
   try {
     cloudinary.config({
-      cloud_name: "dsrz6p2su",
-      api_key: "786683125151779",
-      api_secret: "33Ba1uejxwx6r0WbNzty21ubSbg",
+      cloud_name: CLOUD_NAME,
+      api_key: CLOUD_API_KEY,
+      api_secret: CLOUD_API_SECRET,
     });
     console.log("Cloudinary connected.");
   } catch (error) {

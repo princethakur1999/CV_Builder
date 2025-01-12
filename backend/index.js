@@ -11,6 +11,10 @@ import { connectCloudinary } from "./config/cloudinary.js";
 dotenv.config();
 
 const port = process.env.PORT || 3000;
+const DB_URL = process.env.DB_URL;
+const CLOUD_NAME = process.env.CLOUD_NAME;
+const CLOUD_API_KEY = process.env.CLOUD_API_EMAIL;
+const CLOUD_API_SECRET = process.env.CLOUD_API_SECRET;
 
 const app = express();
 
@@ -31,7 +35,7 @@ app.get("/", (req, res) => {
 app.use("/", authRoute);
 app.use("/", authenticateUser, userDataRoute);
 
-connectMongodb();
+connectMongodb(DB_URL);
 connectCloudinary();
 
 // Start the server
