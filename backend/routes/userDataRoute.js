@@ -12,7 +12,7 @@ import {
   getUserData,
 } from "../controllers/userDataController.js";
 
-import { authenticateUser } from "./middlewares/authMiddleware.js";
+import { authenticateUser } from "../middlewares/authMiddleware.js";
 
 router.post("/save-photo", authenticateUser, savePhoto);
 router.post("/save-personal-details", authenticateUser, savePersonalDetails);
