@@ -20,11 +20,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://cv-builder-pi-liart.vercel.app/",
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    origin: "*", // Allow all origins
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed methods
   })
 );
 

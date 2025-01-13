@@ -23,6 +23,8 @@ function Login() {
   const loginHandler = async (e) => {
     e.preventDefault();
 
+    console.log(`${import.meta.env.VITE_API_URL}/auth/login`);
+
     // Basic input validation
     if (!loginDetails.email || !loginDetails.password) {
       toast.error("Email and password are required.");
