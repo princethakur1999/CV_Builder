@@ -48,5 +48,5 @@ connectCloudinary(CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET);
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${PORT}`);
 });
