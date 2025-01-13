@@ -153,7 +153,7 @@ export async function login(req, res) {
     }
 
     // Check if the user exists
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email: email });
     if (!user) {
       return res.status(400).json({
         success: false,
