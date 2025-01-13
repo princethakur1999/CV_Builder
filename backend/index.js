@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRoute);
-app.use("/user", authenticateUser, userDataRoute);
+app.use("/user", userDataRoute);
 
 connectMongodb(DB_URL);
 connectCloudinary(CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET);
