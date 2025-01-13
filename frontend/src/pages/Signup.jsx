@@ -118,7 +118,7 @@ function Signup() {
   }, []);
 
   return (
-    <div className="h-full w-full flex items-center justify-center">
+    <div className="h-full w-full min-h-screen flex items-center justify-center">
       {loading && <Loader />}
       <div className="bg-opacity-30 backdrop-blur-md bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 p-8 rounded-xl shadow-xl w-[90%] md:w-[50%] lg:w-[35%] flex flex-col items-center gap-6">
         <h1 className="text-3xl font-bold text-green-500">Signup</h1>

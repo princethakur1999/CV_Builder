@@ -17,13 +17,13 @@ function Header() {
   const logoutHandler = () => {
     localStorage.removeItem("token");
 
+    navigate("/login");
+
     dispatch(resetUser());
     dispatch(resetEducation());
     dispatch(resetSkill());
     dispatch(resetProject());
     dispatch(resetLanguage());
-
-    navigate("/login");
 
     toast.success("Logged out successfully");
   };
@@ -39,9 +39,6 @@ function Header() {
       </NavLink>
 
       <div className="w-auto flex justify-between items-center gap-4">
-        {!token && <NavLink to="/signup">Signup</NavLink>}
-        {!token && <NavLink to="/login">Login</NavLink>}
-
         {token && (
           <>
             <NavLink className="grid items-center text-4xl" to="/account">

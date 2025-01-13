@@ -22,7 +22,7 @@ function App() {
 
         <Header />
 
-        <Toaster />
+        <Toaster position="bottom-center" reverseOrder={false} />
 
         {/* Main Content */}
         <div className="w-full max-w-[1200px] flex-1 px-4 py-6 sm:py-12 lg:py-16 flex flex-col items-center justify-center">
