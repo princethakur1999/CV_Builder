@@ -2,7 +2,6 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import fileUpload from "express-fileupload";
-import { authenticateUser } from "./middlewares/authMiddleware.js";
 import authRoute from "./routes/authRoute.js";
 import userDataRoute from "./routes/userDataRoute.js";
 import { connectMongodb } from "./config/mongodb.js";

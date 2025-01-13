@@ -12,13 +12,15 @@ import {
   getUserData,
 } from "../controllers/userDataController.js";
 
-router.post("/save-photo", savePhoto);
-router.post("/save-personal-details", savePersonalDetails);
-router.post("/save-education-details", saveEducationDetails);
-router.post("/save-skills", saveSkills);
-router.post("/save-projects", saveProjects);
-router.post("/save-languages", saveLanguages);
+import { authenticateUser } from "./middlewares/authMiddleware.js";
 
-router.get("/get-user-data", getUserData);
+router.post("/save-photo", authenticateUser, savePhoto);
+router.post("/save-personal-details", authenticateUser, savePersonalDetails);
+router.post("/save-education-details", authenticateUser, saveEducationDetails);
+router.post("/save-skills", authenticateUser, saveSkills);
+router.post("/save-projects", authenticateUser, saveProjects);
+router.post("/save-languages", authenticateUser, saveLanguages);
+
+router.get("/get-user-data", authenticateUser, getUserData);
 
 export default router;
