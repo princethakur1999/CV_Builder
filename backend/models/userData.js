@@ -42,9 +42,7 @@ const userDataSchema = new mongoose.Schema(
           type: String,
         },
         percentage: {
-          type: Number,
-          min: 0,
-          max: 100,
+          type: String,
         },
         year: {
           type: String,

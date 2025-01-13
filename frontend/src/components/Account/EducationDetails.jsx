@@ -23,16 +23,18 @@ function EducationDetails() {
     );
   };
   const isValidEducation = (education) => {
-    if (education.length !== 4) {
+    // Ensure the input is an array and has exactly 4 elements
+    if (!Array.isArray(education) || education.length !== 4) {
       return false;
     }
 
-    // Check if all elements are objects and have exactly 3 properties
+    // Check if all elements are non-null objects with exactly 3 properties
     return education.every(
       (item) =>
-        typeof item === "object" &&
-        item !== null &&
-        Object.keys(item).length === 3
+        item.qualification !== "" &&
+        item.board !== "" &&
+        item.percentage !== "" &&
+        item.year !== ""
     );
   };
 
@@ -40,8 +42,11 @@ function EducationDetails() {
     try {
       dispatch(showLoader(true));
 
+      console.log(education);
+      console.log(isValidEducation(education));
+
       if (!isValidEducation(education)) {
-        toast.error("Fill in all the education fields.");
+        toast.error("Fill all the education fields.");
         dispatch(showLoader(false));
         return;
       }
@@ -101,7 +106,7 @@ function EducationDetails() {
               <td className="border border-green-600 p-2">
                 <input
                   type="text"
-                  className="w-full p-2 border rounded outline-none text-xs sm:text-base focus:border-green-600"
+                  className="w-full p-2 border rounded outline-none text-xs sm:text-base focus:border-green-600 text-center"
                   value={edu.board}
                   onChange={(e) =>
                     changeEducationDetails(index, "board", e.target.value)
@@ -111,7 +116,7 @@ function EducationDetails() {
               <td className="border border-green-600 p-2">
                 <input
                   type="text"
-                  className="w-full p-2 border rounded outline-none text-xs sm:text-base focus:border-green-600"
+                  className="w-full p-2 border rounded outline-none text-xs sm:text-base focus:border-green-600 text-center"
                   value={edu.percentage}
                   onChange={(e) =>
                     changeEducationDetails(index, "percentage", e.target.value)
@@ -121,7 +126,7 @@ function EducationDetails() {
               <td className="border border-green-600 p-2">
                 <input
                   type="text"
-                  className="w-full p-2 border rounded outline-none text-xs sm:text-base focus:border-green-600"
+                  className="w-full p-2 border rounded outline-none text-xs sm:text-base focus:border-green-600 text-center"
                   value={edu.year}
                   onChange={(e) =>
                     changeEducationDetails(index, "year", e.target.value)
