@@ -10,7 +10,7 @@ import { connectCloudinary } from "./config/cloudinary.js";
 
 dotenv.config();
 
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 const DB_URL = process.env.DB_URL;
 const CLOUD_NAME = process.env.CLOUD_NAME;
 const CLOUD_API_KEY = process.env.CLOUD_API_EMAIL;
@@ -34,7 +34,7 @@ app.use(
   })
 );
 
-app.get("/test", (req, res) => {
+app.get("/", (req, res) => {
   res.json({
     message: "Server is running",
   });
@@ -47,6 +47,6 @@ connectMongodb(DB_URL);
 connectCloudinary(CLOUD_NAME, CLOUD_API_KEY, CLOUD_API_SECRET);
 
 // Start the server
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${port}`);
 });
